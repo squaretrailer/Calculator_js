@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Italiana&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="calculator">
+            <h3>Calculator</h3>
+            <input type="text" id="display" readonly aria-label="Calculation display">
+            
+            <div class="buttons">
+                <!-- Row 1: Control buttons -->
+                <button type="button" class="clear" onclick="clearDisplay()" aria-label="Clear">C</button>
+                <button type="button" class="delete" onclick="deleteLast()" aria-label="Delete last">DEL</button>
+                <button type="button" class="operator" onclick="appendOperator('/')" aria-label="Divide">/</button>
+                <button type="button" class="operator" onclick="appendOperator('*')" aria-label="Multiply">*</button>
+
+                <!-- Row 2: Numbers and operators -->
+                <button type="button" onclick="appendNumber('7')">7</button>
+                <button type="button" onclick="appendNumber('8')">8</button>
+                <button type="button" onclick="appendNumber('9')">9</button>
+                <button type="button" class="operator" onclick="appendOperator('-')">-</button>
+
+                <!-- Row 3 -->
+                <button type="button" onclick="appendNumber('4')">4</button>
+                <button type="button" onclick="appendNumber('5')">5</button>
+                <button type="button" onclick="appendNumber('6')">6</button>
+                <button type="button" class="operator" onclick="appendOperator('+')">+</button>
+
+                <!-- Row 4 -->
+                <button type="button" onclick="appendNumber('1')">1</button>
+                <button type="button" onclick="appendNumber('2')">2</button>
+                <button type="button" onclick="appendNumber('3')">3</button>
+                <button type="button" class="equals" onclick="calculate()" aria-label="Equals">=</button>
+
+                <!-- Row 5: Extra buttons -->
+                <button type="button" class="zero" onclick="appendNumber('0')">0</button>
+                <button type="button" class="decimal" onclick="appendDecimal()">.</button>
+                <button type="button" onclick="toggleSign()" aria-label="Toggle sign">±</button>
+                <button type="button" onclick="appendPercentage()" aria-label="Percentage">%</button>
+            </div>
+
+            <div class="history-calculation">
+                <h4>History</h4>
+                <div id="error-message" class="error-message"></div>
+                <ul id="history-list" aria-live="polite"></ul>
+            </div>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
