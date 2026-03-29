@@ -144,9 +144,9 @@ function addToHistory(expression, result) {
     historyList.prepend(li);
     
     // Keep only last 10 items
-    if (historyList.children.length > 10) {
-        historyList.removeChild(historyList.lastChild);
-    }
+    if (historyList.children.length > 10) {   // change 10 to any number
+    historyList.removeChild(historyList.lastChild);
+}
 }
 
 // Optional: clear all history (call from a button if you add one)
